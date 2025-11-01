@@ -68,3 +68,9 @@ RUN cd ${COLCON_WS} && \
 
 RUN cd ${COLCON_WS} && \
     colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
+
+RUN echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc && \
+    echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc && \
+    echo "export LDS_MODEL=LDS-02" >> ~/.bashrc
+
+CMD ["bash"]
